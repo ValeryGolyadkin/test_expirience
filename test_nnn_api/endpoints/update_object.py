@@ -1,5 +1,5 @@
 import requests
-from test_nnn_api.endpoints.base_endpoint import Endpoint
+from .base_endpoint import Endpoint
 
 
 class UpdateObject(Endpoint):
