@@ -1,6 +1,6 @@
 import pytest
-from .endpoints.create_Object import CreateObject
-from .endpoints.delete_object import DeleteObject
+from test_nnn_api.endpoints.create_Object import CreateObject
+from test_nnn_api.endpoints.delete_object import DeleteObject
 
 
 @pytest.fixture()
