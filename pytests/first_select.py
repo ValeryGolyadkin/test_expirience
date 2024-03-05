@@ -24,7 +24,7 @@ button_id = browser.find_element(By.ID, 'submit-id-submit')
 button_id.click()
 time.sleep(0.5)
 # Находим элемент с помощью CSS-селектора
-#element = browser.find_element(By.CSS_SELECTOR, '.tab:nth-of-type(2)'работает)
+# element = browser.find_element(By.CSS_SELECTOR, '.tab:nth-of-type(2)'работает)
 element = browser.find_element(By.CSS_SELECTOR, 'li[class="tab"]' and ' .tab:nth-of-type(2)')
 element.click()
 time.sleep(0.5)

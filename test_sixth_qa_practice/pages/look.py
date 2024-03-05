@@ -1,5 +1,5 @@
 from selenium.webdriver.common.by import By
-
+from selenium.webdriver.common.keys import Keys
 from test_sixth_qa_practice.pages.base import BasePage
 
 button_selector = (By.XPATH, '//*[@class="a-button"]')
@@ -20,7 +20,7 @@ class LikeAButton(BasePage):
         return self.button().is_displayed()
 
     def button_click(self):
-        return self.button().click()
+        return self.button().send_keys(Keys.RETURN)
 
     def result(self):
         return self.find(result_selector)

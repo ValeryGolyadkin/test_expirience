@@ -1,11 +1,7 @@
-import requests
-import pytest
-from test_nnn_API.endpoints.create_Object import CreateObject
-from test_nnn_API.endpoints.get_object import GetObject
-from test_nnn_API.endpoints.update_object import UpdateObject
-from test_nnn_API.endpoints.delete_object import DeleteObject
-
-
+from test_nnn_api.endpoints.create_Object import CreateObject
+from test_nnn_api.endpoints.get_object import GetObject
+from test_nnn_api.endpoints.update_object import UpdateObject
+from test_nnn_api.endpoints.delete_object import DeleteObject
 
 
 def test_create_object():
@@ -42,7 +38,7 @@ def test_put_object(obj_id):
     update_obj_endpoint = UpdateObject()
     update_obj_endpoint.update_by_id(obj_id, play_load)
     update_obj_endpoint.check_response_is_200()
-    update_obj_endpoint.check_name(play_load)
+    update_obj_endpoint.check_name(play_load["name"])
 
 
 def test_del_object(obj_id):

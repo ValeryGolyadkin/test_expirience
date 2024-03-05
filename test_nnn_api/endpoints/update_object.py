@@ -1,12 +1,12 @@
 import requests
-from test_nnn_API.endpoints.base_andpoint import Endpoint
+from test_nnn_api.endpoints.base_endpoint import Endpoint
 
 
 class UpdateObject(Endpoint):
 
     def update_by_id(self, obj_id, play_load):
         self.response = requests.put(f'https://api.restful-api.dev/objects/{obj_id}',
-                                     json=play_load).json()
+                                     json=play_load)
         self.response_json = self.response.json()
 
     def check_id(self, object_id):

@@ -1,4 +1,3 @@
-from selenium.webdriver.common.by import By
 from test_sixth_qa_practice.pages.look import LikeAButton
 import time
 

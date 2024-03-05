@@ -1,14 +1,12 @@
+import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait as Wait
-from selenium.webdriver.support import expected_conditions as EC
-import time
 
 browser = webdriver.Edge()
 browser.get('https://www.qa-practice.com/elements/button/simple')
-#CSS_SELECTOR работает с тэгами  страницы div p li (если мы ищем именно стиль css работает через .tab)
-#Так же он может управлять их атрибутами по названию : class, id, type ="...."
-#Группировка  элементов происходит через смешение тэгов и атрибутов
+# CSS_SELECTOR работает с тэгами страницы div p li (если мы ищем именно стиль css работает через .tab)
+# Так же он может управлять их атрибутами по названию: class, id, type ="...."
+# Группировка элементов происходит через смешение тегов и атрибутов
 element = browser.find_element(By.CSS_SELECTOR, 'li[class="tab"]' and ' .tab:nth-of-type(2)')
 element.click()
 time.sleep(0.5)
@@ -31,4 +29,3 @@ element = browser.find_element(By.CSS_SELECTOR, 'form[method="post"] label ')
 element.click()
 time.sleep(0.5)
 browser.quit()
-

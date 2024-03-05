@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
 from test_sixth_qa_practice.pages.base import BasePage
-
+from selenium.webdriver.common.keys import Keys
 
 button_selector = (By.ID, "submit-id-submit")
 result_selector = (By.ID, "result-text")
@@ -20,11 +20,10 @@ class SimpleButton(BasePage):
         return self.button().is_displayed()
 
     def button_click(self):
-        return self.button().click()
+        return self.button().send_keys(Keys.RETURN)
 
     def result(self):
         return self.find(result_selector)
 
     def result_text(self):
         return self.result().text
-
