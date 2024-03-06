@@ -15,26 +15,27 @@ on:
 
 jobs:
   tests:
-    runs-on:
-      ubuntu-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      - name: setup Python
+      - name: Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: "3.12"
       - name: Install Edge
         run: sudo apt-get install microsoft-edge-stable
-      - name: install dependencies
+      - name: Install dependencies
         run: pip install -r requirements.txt
-      - name: test_api
-        if: "github.event.inputs.deployment_target == ' test_api'"
+      - name: Run tests for test_api
+        if: github.event.inputs.deployment-target == 'test_api'
         run: pytest test_nnn_api\tests\test_Api.py
-      - name: test_qa
-        if: "github.event.inputs.deployment_target == ' test_qa'"
-        run: pytest test_sixth_qa_practice\tests\test_simple_button.py, pytest test_sixth_qa_practice\tests\test_looks_like.py
-      - name: another
-        if: "github.event.inputs.deployment_target == ' another'"
+      - name: Run tests for test_qa
+        if: github.event.inputs.deployment-target == 'test_qa'
+        run: |
+          pytest test_sixth_qa_practice\tests\test_simple_button.py
+          pytest test_sixth_qa_practice\tests\test_looks_like.py
+      - name: Run another tests
+        if: github.event.inputs.deployment-target == 'another'
         run: pytest pytests\test_forth_pytest.py
