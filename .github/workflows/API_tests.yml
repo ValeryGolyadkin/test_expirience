@@ -24,7 +24,7 @@ jobs:
       - name: setup Python
         uses: actions/setup-python@v4
         with:
-          pyth on-version: "3.12"
+          python-version: "3.12"
       - name: Install Edge
         run: sudo apt-get install microsoft-edge-stable
       - name: install dependencies
