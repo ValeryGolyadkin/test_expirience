@@ -9,9 +9,9 @@ on:
         default: 'test_api'
         type: choice
         options:
-          -test_api
-          -test_qa
-          -another
+          - test_api
+          - test_qa
+          - another
 
 jobs:
   tests:
@@ -30,11 +30,11 @@ jobs:
       - name: install dependencies
         run: pip install -r requirements.txt
       - name: test_api
-        if: "github.event.inputs.deployment_target == 'test_api' "
+        if: "github.event.inputs.deployment_target == ' test_api'"
         run: pytest test_nnn_api\tests\test_Api.py
       - name: test_qa
-        if: "github.event.inputs.deployment_target == 'test_qa' "
+        if: "github.event.inputs.deployment_target == ' test_qa'"
         run: pytest test_sixth_qa_practice\tests\test_simple_button.py, pytest test_sixth_qa_practice\tests\test_looks_like.py
       - name: another
-        if: "github.event.inputs.deployment_target == 'another' "
+        if: "github.event.inputs.deployment_target == ' another'"
         run: pytest pytests\test_forth_pytest.py
