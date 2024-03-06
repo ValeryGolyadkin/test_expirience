@@ -30,12 +30,12 @@ jobs:
         run: pip install -r requirements.txt
       - name: Run tests for test_api
         if: github.event.inputs.deployment-target == 'test_api'
-        run: pytest test_nnn_api\tests\test_Api.py
+        run: pytest test_nnn_api/tests/test_Api.py
       - name: Run tests for test_qa
         if: github.event.inputs.deployment-target == 'test_qa'
         run: |
-          pytest test_sixth_qa_practice\tests\test_simple_button.py
-          pytest test_sixth_qa_practice\tests\test_looks_like.py
+          pytest test_sixth_qa_practice/tests/test_simple_button.py
+          pytest test_sixth_qa_practice/tests/test_looks_like.py
       - name: Run another tests
         if: github.event.inputs.deployment-target == 'another'
-        run: pytest pytests\test_forth_pytest.py
+        run: pytest pytests/test_forth_pytest.py
