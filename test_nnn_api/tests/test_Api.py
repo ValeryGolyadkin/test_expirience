@@ -1,9 +1,12 @@
+import pytest
+
 from test_nnn_api.endpoints.create_Object import CreateObject
 from test_nnn_api.endpoints.get_object import GetObject
 from test_nnn_api.endpoints.update_object import UpdateObject
 from test_nnn_api.endpoints.delete_object import DeleteObject
 
 
+@pytest.mark.smoke
 def test_create_object():
     new_object_endpoint = CreateObject()
     play_load = {
@@ -26,6 +29,7 @@ def test_get_object(obj_id):
     get_obj_endpoint.check_id(obj_id)
 
 
+@pytest.mark.smoke
 def test_put_object(obj_id):
     play_load = {
         "name": "Apple MacBook Pro 26",
