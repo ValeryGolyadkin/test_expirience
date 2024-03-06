@@ -9,9 +9,9 @@ on:
         default: 'test_api'
         type: choice
         options:
-          - test_api
-          - test_qa
-          - another
+          -test_api
+          -test_qa
+          -another
 
 jobs:
   tests:
