@@ -1,3 +1,4 @@
+import allure
 import pytest
 from test_nnn_api.endpoints.create_Object import CreateObject
 from test_nnn_api.endpoints.delete_object import DeleteObject
