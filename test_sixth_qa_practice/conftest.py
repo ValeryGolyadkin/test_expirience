@@ -10,6 +10,6 @@ def browser():
     options = Options()
     with allure.step('headless'):
         options.add_argument('--headless')
-        browser = webdriver.Edge(options=options)
+        browser = webdriver.Chrome(options=options)
         browser.implicitly_wait(10)
         return browser
